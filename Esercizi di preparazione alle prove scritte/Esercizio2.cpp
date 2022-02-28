@@ -36,7 +36,7 @@ void PrintMatrix(T*** Matrix, int n, int m){
     cout << "------------" << endl;
 }
 
-
+//Funzione richiesta dall'esercizio
 bool esercizio2(string*** M, int n, int m){
     for(int i=0; i<m; i++){ //Fisso le colonne
         int pal_cols=0;
