@@ -35,15 +35,15 @@ void PrintArray(T* Arr, int n){
     cout << endl << "-------------"<< endl;
 }
 
-
+//Funzione richiesta dall'esercizio
 int* Esercizio5(int** A, double** B, int n, int m, int k){
-    int* C= new int [n];
+    int* C= new int [n]; //Creo dinamicamente l'array che ritornerò alla fine
     for(int i=0; i<n; i++){
-        int sum_elements=0;
-        int count=0;
-        for(int j=0; j<m; j++){
-            for(int z=0; z<k; z++){
-                if(A[i][j]==round(B[z][i])){
+        int sum_elements=0; // Creo la variabile che conterrà la somma degli elementi uguali
+        int count=0; // Creo la variabile che servirà da contatore degli elementi 
+        for(int j=0; j<m; j++){ 
+            for(int z=0; z<k; z++){ //Per ogni elemento della riga di A, controllo tutta la colonna di B
+                if(A[i][j]==round(B[z][i])){ // Stabilisco gli elementi uguali
                     sum_elements+=A[i][j];
                     count++;
                     break;
@@ -96,7 +96,7 @@ int main(){
     cout << "-Matrice A:" << endl;
     PrintMatrix(A, n, m);
 
-    cout << "-Matrice B" << endl;
+    cout << "-Matrice B:" << endl;
     PrintMatrix(B, k, n);
 
 
