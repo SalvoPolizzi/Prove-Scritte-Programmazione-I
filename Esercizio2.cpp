@@ -63,7 +63,6 @@ bool esercizio2(string*** M, int n, int m){
 
 
 
-
 // Esempio nel main
 
 int main(){

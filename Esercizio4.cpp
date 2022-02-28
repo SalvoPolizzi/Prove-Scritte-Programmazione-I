@@ -36,6 +36,8 @@ void PrintArray(T* Arr, int n){
     cout << endl << "-------------"<< endl;
 }
 
+
+//Funzione richiesta dall'esercizio
 double* esercizio4(int** A, int** B, int n, int m, int k){
     double* C= new double[n]; //Inizializzo dinamicamente C
     for(int i=0; i<n; i++){ // Scorro contemporaneamente le righe di A e le colonne di B

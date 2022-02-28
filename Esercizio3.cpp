@@ -33,6 +33,7 @@ void PrintArray(T* Arr, int n){
     cout << endl << "-------------"<< endl;
 }
 
+//Funzione richiesta dall'esercizio
 bool Esercizio3(string** S, int n, int m, char* C, int k, float w){
     for(int i=0; i<n; i++){ // Scorro S per riga
         string string_rows; // creo un unica stringa contenente tutte le stringhe (concatenate) della riga
