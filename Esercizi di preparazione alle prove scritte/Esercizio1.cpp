@@ -32,16 +32,16 @@ void PrintMatrix3D(T*** Matrix, int n, int m, int k){
 
 //Funzione richiesta dall'esercizio
 bool Esercizio1(int*** A, int k, int n, double w){
-    for(int i=0; i<k; i++){
-        int min=A[i][0][0];
+    for(int i=0; i<k; i++){// Fisso l'indice k
+        int min=A[i][0][0]; //Assumo come minimo e massimo i primi elementi della diagonale
         int max=A[i][0][0];
-        for(int j=1; j<n; j++){
-            if(A[i][j][j]<min)
+        for(int j=1; j<n; j++){ 
+            if(A[i][j][j]<min) //Trovo il minimo
                 min = A[i][j][j];
-            else if(A[i][j][j]>max)
+            else if(A[i][j][j]>max) //Trovo il massimo
                 max = A[i][j][j];
         }
-        double media= (min+max)/2.0;
+        double media= (min+max)/2.0; // Calcolo media
         if(media <= w)
             return true;
     }
