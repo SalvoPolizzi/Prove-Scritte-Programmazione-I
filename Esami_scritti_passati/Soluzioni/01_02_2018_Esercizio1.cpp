@@ -61,6 +61,7 @@ int Esercizio1(bool** Mat, int n){
 }
 
 
+//Esempio nel main
 int main(){
     int n;
     cout << "Dammi la dimensione n della matrice quadrata di bool: ";
