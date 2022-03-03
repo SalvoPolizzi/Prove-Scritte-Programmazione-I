@@ -26,53 +26,31 @@ bool** MatrixSimulator(int n, int m){
     return Mat;
 }
 
-//Metodo che mi simula il movimento del santone
-/*void MovimentoSantone(int &index_rows, int &index_cols){
-    srand(time(0));
-    int movimento = rand()%(4);
-    if(movimento==0){
-        cout << "Il santone si muove in avanti" << endl;
-        index_rows++;
-    }else if(movimento==1){
-        cout << "Il santone si muove verso destra" << endl;
-        index_cols++;
-    }else if(movimento==2){
-        cout << "Il santone si muove verso sinistra" << endl;
-        index_cols--;
-    }else{
-        cout << "Il santone si muove indietro" << endl;
-        index_rows--;
-    }
-}*/
 
 //Funzione richiesta dall'esercizio
 int Esercizio1(bool** Mat, int n){
-    int count_libri=0;
-    int santone_row=(n-1)/2;
+    int count_libri=0;//Contatore libri
+    int santone_row=(n-1)/2; //Posizione iniziale del santone (centro)
     int santone_col=(n-1)/2;
-    if(Mat[santone_row][santone_col]){
+    if(Mat[santone_row][santone_col]){ //Verifico se al centro c'è un libro
         cout << "Il santone ha trovato un libro al centro della regione (posizione [" << santone_row << "][" << santone_col << "])" << endl << endl;
         count_libri++;
     }
     while(santone_row>0 && santone_row<n-1 && santone_col>0 && santone_col<n-1){
-        int movimento=rand()%4;
-        if(movimento==0){
+        int movimento=rand()%4;//Simulo il movimento nelle 4 direzioni
+        if(movimento==0){//Movimento in avanti (riga successiva)
             cout << "Il santone si muove in avanti e si trova in posizione ("<< ++santone_row << ", " << santone_col << ")" << endl;
-            //santone_row++;
         }
-        else if (movimento == 1){
+        else if (movimento == 1){//Movimento verso destra (colonna successiva)
             cout << "Il santone si muove verso destra e si trova in posizione ("<< santone_row << ", " << ++santone_col << ")" << endl;
-            //santone_col++;
         }
-        else if (movimento == 2){
+        else if (movimento == 2){//Movimento verso sinistra (colonna precedente)
             cout << "Il santone si muove verso sinistra e si trova in posizione ("<< santone_row << ", " << --santone_col << ")" << endl;
-           // santone_col--;
         }
-        else{
+        else{// Movimento indietro (riga precedente)
             cout << "Il santone si muove indietro e si trova in posizione ("<< --santone_row << ", " << santone_col << ")" << endl;
-            //santone_row--;
         }
-        if(Mat[santone_row][santone_col]){
+        if(Mat[santone_row][santone_col]){//Verifico se c'è un libro nella nuova posizione
             count_libri++;
             cout << "Il santone ha trovato un libro in questa posizione (" << santone_row << ", " << santone_col << ")" << endl << endl;
         }else{
@@ -84,7 +62,6 @@ int Esercizio1(bool** Mat, int n){
 
 
 int main(){
-    
     int n;
     cout << "Dammi la dimensione n della matrice quadrata di bool: ";
     cin >> n;
