@@ -10,12 +10,14 @@ delle stringhe sulla faccia superiore del cubo C.
 
 using namespace std;
 
+
+//Funzione richiesta dall'esercizio
 string Esercizio2(string*** C, int n){
-    string finale = "";
+    string finale = "";//creo la stringa finale che ritornerò
     for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
-            string attuale = C[0][i][j];
-            finale+=attuale.substr(attuale.length()-2);
+            string attuale = C[0][i][j];//Poichè ci interessa la faccia superiore del cubo il primo indice sarà 0
+            finale+=attuale.substr(attuale.length()-2);//inserisco in finale tutte le desinenze di due caratteri delle stringhe
         }
     }
     return finale;
@@ -55,6 +57,7 @@ int main(){
             }
         }
     }
+    cout << endl;
     PrintSupFaceCube(C, n);
     cout << "La stringa finale formata da tutte le desinenze di 2 caratteri delle stringhe della faccia superiore del cubo è:\n" << Esercizio2(C,n) << endl;
 }
